@@ -1,3 +1,5 @@
+/* ÚVOD */
+
 * {
   box-sizing: border-box;
   font-family: inherit;
@@ -23,6 +25,8 @@ img {
   margin-inline: auto;
   padding-inline: 1rem;
 }
+
+/* ZÁHLAVÍ */
 
 .header {
   background-color: #1e40af;
@@ -74,6 +78,8 @@ img {
   font-weight: 700;
 }
 
+/* O MNĚ */
+
 section {
   padding-block: 4rem;
 }
@@ -98,15 +104,24 @@ section {
   gap: 1rem;
 }
 
+@media (max-width: 600px) {
+  .about .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .about img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+}
+
 h2 {
   font-size: 1.8rem;
   font-weight: 900;
 }
 
-.about .signature {
-  display: block;
-  height: 2.5rem;
-}
+/* KONTAKT */
 
 .contact {
   background-color: #1e40af;
@@ -137,8 +152,113 @@ form textarea {
   justify-self: center;
 }
 
+/* ZÁPATÍ */
+
 footer {
   padding-block: 2rem;
   background-color: #171717;
   color: white;
+}
+
+/* KOMPLEXNÍ ČÁST: NABÍDKA */
+
+.offers {
+  background-color: #f5f5f5;
+}
+
+.offers .wrapper {
+  display: grid;
+  gap: 3rem;
+}
+
+.offers h2 {
+  text-align: center;
+}
+
+.offers .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .offers .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #0004;
+  box-shadow: 0 0.1rem 0.5rem #0004;
+  background-color: white;
+  color: black;
+}
+
+.offers .card h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.offers .card p {
+  font-size: 0.95rem;
+}
+
+/* CENA */
+
+.pricing {
+  background-color: #1e40af;
+  color: white;
+}
+
+.pricing .wrapper {
+  display: grid;
+  gap: 3rem;
+  max-width: 65ch;
+}
+
+.pricing h2 {
+  text-align: center;
+}
+
+.pricing .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pricing .name small {
+  font-size: 0.9rem;
+}
+
+.pricing .name p {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.pricing .price {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.pricing .included {
+  display: grid;
+  gap: 0.25rem 1rem;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+}
+
+.pricing .included ::before {
+  content: "\2713";
+  padding-inline-end: 0.4rem;
+}
+
+@media (max-width: 600px) {
+  .pricing .included {
+    grid-template-columns: 1fr;
+  }
 }
